@@ -1,0 +1,115 @@
+body,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #131720;
+  font-family: sans-serif;
+}
+/*
+==================================
+==================================
+DISPLAY GRID/FLEX STYLES
+==================================
+==================================
+*/
+.main-container {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "alias-nav"
+    "alias-content";
+}
+nav {
+  grid-area: alias-nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+main {
+  grid-area: alias-content;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 30px;
+}
+.movie-container {
+  width: 250px;
+  height: 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background-color: #151f30;
+}
+
+/*
+==================================
+==================================
+TOP NAVIGATION STYLES
+==================================
+==================================
+*/
+
+.logo {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: white;
+}
+.search {
+  width: 250px;
+  height: 33px;
+  padding: 5px;
+  border: 0 solid;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #151f30;
+}
+
+/*
+==================================
+==================================
+MAIN CONTENT STYLES
+==================================
+==================================
+*/
+
+img {
+  width: 220px;
+  height: 250px;
+  border-radius: 20px;
+}
+h3 {
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+/*
+==================================
+==================================
+BREAKPOINTS
+==================================
+==================================
+*/
+
+@media (max-width: 580px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .movie-container {
+    width: 350px;
+    height: 415px;
+  }
+  img {
+    width: 320px;
+    height: 350px;
+  }
+}
