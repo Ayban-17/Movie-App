@@ -12,15 +12,17 @@ const returnMovie = (url) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      main.innerHTML = data.results.map((data) => {
-        return `<div class="movie-container">
+      main.innerHTML = data.results
+        .map((data) => {
+          return `<div class="movie-container">
         <img
           src="${IMG_PATH}${data.poster_path}"
           alt="Movie Poster"
         />
         <h3>${data.title}</h3>
       </div>`;
-      });
+        })
+        .join("");
     });
 };
 returnMovie(APILINK);
